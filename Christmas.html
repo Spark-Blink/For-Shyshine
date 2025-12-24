@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You Shyshine</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(#0b2b1d, #123c2a);
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 520px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade {
+  animation: fadeIn 1.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tree {
+  font-size: 90px;
+  margin-bottom: 10px;
+}
+
+.bells {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.bell {
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.bell:hover {
+  transform: scale(1.2);
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 22px;
+  background: #cfa14a;
+  border: none;
+  border-radius: 22px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+button:hover {
+  background: #e0b35c;
+}
+
+.note {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+
+.final-image {
+  margin-top: 25px;
+}
+
+.final-image img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div id="intro" class="fade">
+    <div class="tree">🎄</div>
+    <p>
+      Christmas feels different this year.<br><br>
+      Maybe because it's first time with you together..There’s something here for you.<br>
+      But only if you remember…
+    </p>
+    <p class="note">
+      One bell opens the memory.Good Luck Finding it
+    </p>
+  </div>
+
+  <!-- BELLS -->
+  <div class="bells fade">
+    <div class="bell" onclick="wrongBell()">🔔</div>
+    <div class="bell" onclick="rightBell()">🔔</div>
+    <div class="bell" onclick="wrongBell()">🔔</div>
+  </div>
+
+  <!-- MESSAGE -->
+  <div id="message" class="hidden fade">
+    <p>
+      Congrats!!!You found it.<br><br>
+      Maybe because you know me.<br>
+      Or maybe because you listened closely.<br><br>
+      In This Wonderful Christmas,<br>
+      I just wanted you to know…
+    </p>
+
+    <p style="margin-top:25px;">
+      You are still my favorite thought<br>
+      at the end of the day.
+    </p>
+
+    <button onclick="finalPart()">One last thing</button>
+  </div>
+
+  <!-- FINAL -->
+  <div id="final" class="hidden fade">
+    <p>
+      Merry Christmas 🤍 To everyone But you Marry me!!!<br><br>
+      Hehe...And thank you…<br>
+      for being part of my year. I Love You Babe.
+    </p>
+
+    <div class="final-image">
+      <img src="final-photo.jpg" alt="Our memory">
+    </div>
+  </div>
+
+</div>
+
+<script>
+function wrongBell() {
+  alert("Not this one 🙂");
+}
+
+function rightBell() {
+  document.getElementById("intro").style.display = "none";
+  document.querySelector(".bells").style.display = "none";
+  document.getElementById("message").style.display = "block";
+}
+
+function finalPart() {
+  document.getElementById("message").style.display = "none";
+  document.getElementById("final").style.display = "block";
+}
+</script>
+
+</body>
+</html>
